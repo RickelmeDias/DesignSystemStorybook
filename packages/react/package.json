@@ -2,15 +2,18 @@
   "name": "@ignite-ui/react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
+    "@ignite-ui/ts-config": "*",
     "@ignite-ui/tokens": "*",
     "tsup": "^6.5.0",
     "typescript": "^4.9.4"
