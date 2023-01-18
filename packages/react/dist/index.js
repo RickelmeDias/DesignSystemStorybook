@@ -34,7 +34,9 @@ __export(src_exports, {
   MultiStep: () => MultiStep,
   Text: () => Text,
   TextArea: () => TextArea,
-  TextInput: () => TextInput
+  TextInput: () => TextInput,
+  Toast: () => Toast,
+  ToolTip: () => ToolTip
 });
 module.exports = __toCommonJS(src_exports);
 
@@ -169,10 +171,16 @@ var Text = styled("p", {
       "7xl": { fontSize: "$7xl" },
       "8xl": { fontSize: "$8xl" },
       "9xl": { fontSize: "$9xl" }
+    },
+    weights: {
+      regular: { fontWeight: 400 },
+      medium: { fontWeight: 500 },
+      bold: { fontWeight: 700 }
     }
   },
   defaultVariants: {
-    size: "md"
+    size: "md",
+    weights: "regular"
   }
 });
 Text.displayName = "Text";
@@ -529,6 +537,88 @@ function MultiStep({ size, currentStep = 1 }) {
   });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/ToolTip.tsx
+var ToolTip = styled("div", {
+  position: "relative",
+  padding: "$3 $4",
+  borderRadius: "$md",
+  backgroundColor: "$gray900",
+  border: "1px solid $gray600"
+});
+ToolTip.displayName = "ToolTip";
+
+// src/components/Toast/styles.ts
+var ToastContainer = styled("div", {
+  display: "flex",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  flexDirection: "column",
+  gap: "$1",
+  padding: "$5",
+  borderRadius: "$md",
+  backgroundColor: "$gray800",
+  color: "$gray200",
+  border: "1px solid $gray600"
+});
+var ToastHeaderContainer = styled("div", {
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  textAlign: "center",
+  color: "$white",
+  border: "none",
+  padding: 0,
+  margin: 0,
+  backgroundColor: "transparent"
+});
+var CloseButtonContainer = styled("button", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  textAlign: "center",
+  color: "$gray200",
+  border: "none",
+  padding: 0,
+  margin: 0,
+  backgroundColor: "transparent",
+  "&:hover": {
+    cursor: "pointer",
+    color: "$gray100"
+  }
+});
+
+// src/components/Toast/index.tsx
+var import_phosphor_react3 = require("phosphor-react");
+var import_jsx_runtime5 = require("react/jsx-runtime");
+function Toast(props) {
+  return /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastContainer, {
+    ...props,
+    children: [
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsxs)(ToastHeaderContainer, {
+        children: [
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, {
+            size: "xl",
+            weights: "bold",
+            children: props.title
+          }),
+          /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(CloseButtonContainer, {
+            children: /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(import_phosphor_react3.X, {
+              size: 20
+            })
+          })
+        ]
+      }),
+      /* @__PURE__ */ (0, import_jsx_runtime5.jsx)(Text, {
+        size: "sm",
+        color: "black",
+        children: props.message
+      })
+    ]
+  });
+}
+Toast.displayName = "Toast";
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
   Avatar,
@@ -539,5 +629,7 @@ MultiStep.displayName = "MultiStep";
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast,
+  ToolTip
 });

@@ -129,10 +129,16 @@ var Text = styled("p", {
       "7xl": { fontSize: "$7xl" },
       "8xl": { fontSize: "$8xl" },
       "9xl": { fontSize: "$9xl" }
+    },
+    weights: {
+      regular: { fontWeight: 400 },
+      medium: { fontWeight: 500 },
+      bold: { fontWeight: 700 }
     }
   },
   defaultVariants: {
-    size: "md"
+    size: "md",
+    weights: "regular"
   }
 });
 Text.displayName = "Text";
@@ -489,6 +495,88 @@ function MultiStep({ size, currentStep = 1 }) {
   });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/ToolTip.tsx
+var ToolTip = styled("div", {
+  position: "relative",
+  padding: "$3 $4",
+  borderRadius: "$md",
+  backgroundColor: "$gray900",
+  border: "1px solid $gray600"
+});
+ToolTip.displayName = "ToolTip";
+
+// src/components/Toast/styles.ts
+var ToastContainer = styled("div", {
+  display: "flex",
+  alignItems: "flex-start",
+  justifyContent: "flex-start",
+  flexDirection: "column",
+  gap: "$1",
+  padding: "$5",
+  borderRadius: "$md",
+  backgroundColor: "$gray800",
+  color: "$gray200",
+  border: "1px solid $gray600"
+});
+var ToastHeaderContainer = styled("div", {
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  textAlign: "center",
+  color: "$white",
+  border: "none",
+  padding: 0,
+  margin: 0,
+  backgroundColor: "transparent"
+});
+var CloseButtonContainer = styled("button", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  textAlign: "center",
+  color: "$gray200",
+  border: "none",
+  padding: 0,
+  margin: 0,
+  backgroundColor: "transparent",
+  "&:hover": {
+    cursor: "pointer",
+    color: "$gray100"
+  }
+});
+
+// src/components/Toast/index.tsx
+import { X } from "phosphor-react";
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function Toast(props) {
+  return /* @__PURE__ */ jsxs4(ToastContainer, {
+    ...props,
+    children: [
+      /* @__PURE__ */ jsxs4(ToastHeaderContainer, {
+        children: [
+          /* @__PURE__ */ jsx5(Text, {
+            size: "xl",
+            weights: "bold",
+            children: props.title
+          }),
+          /* @__PURE__ */ jsx5(CloseButtonContainer, {
+            children: /* @__PURE__ */ jsx5(X, {
+              size: 20
+            })
+          })
+        ]
+      }),
+      /* @__PURE__ */ jsx5(Text, {
+        size: "sm",
+        color: "black",
+        children: props.message
+      })
+    ]
+  });
+}
+Toast.displayName = "Toast";
 export {
   Avatar2 as Avatar,
   Box,
@@ -498,5 +586,7 @@ export {
   MultiStep,
   Text,
   TextArea,
-  TextInput
+  TextInput,
+  Toast,
+  ToolTip
 };
