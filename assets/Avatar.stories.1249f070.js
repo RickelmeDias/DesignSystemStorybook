@@ -1,0 +1,2 @@
+import{A as t}from"./index.83000b6e.js";import"./index.ba7a3623.js";import"./iframe.65e0f5ec.js";import"./index.faa5dbcd.js";import"./jsx-runtime.4c4fcc99.js";const c={title:"Data display/Avatar",component:t,args:{src:"https://github.com/RickelmeDias.png",alt:"Rick Dias"},argTypes:{src:{control:{type:"text"}}}},p={},e={args:{src:void 0}},m=["Primary","WithFallback"];export{p as Primary,e as WithFallback,m as __namedExportsOrder,c as default};
+//# sourceMappingURL=Avatar.stories.1249f070.js.map

@@ -1,0 +1,2 @@
+import{d as t}from"./index.83000b6e.js";import"./index.ba7a3623.js";import"./iframe.65e0f5ec.js";import"./index.faa5dbcd.js";import"./jsx-runtime.4c4fcc99.js";const i={title:"Calendar/Toast",component:t,args:{title:"Hello World",message:"It is a Toast!"},argTypes:{children:{control:{type:null}}}},l={},m=["Primary"];export{l as Primary,m as __namedExportsOrder,i as default};
+//# sourceMappingURL=Toast.stories.b3a6e1a4.js.map

@@ -1,0 +1,2 @@
+import{e as o,T as r}from"./index.83000b6e.js";import{j as t}from"./jsx-runtime.4c4fcc99.js";import"./index.ba7a3623.js";import"./iframe.65e0f5ec.js";import"./index.faa5dbcd.js";const s={title:"Calendar/ToolTip",component:o,args:{children:t(r,{children:"21 de Outubro - Indispon\xEDvel"})},argTypes:{children:{control:{type:null}}},onClick:{action:"clicked"}},a={},c=["Primary"];export{a as Primary,c as __namedExportsOrder,s as default};
+//# sourceMappingURL=Tooltip.stories.d742e9bb.js.map
