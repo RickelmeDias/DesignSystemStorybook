@@ -1,7 +1,7 @@
-## Ignite Shop
+## Design System with Storybook
 
 ```
-Challenge: Learn how to Next.js works, like API, SSG, SPA, SSR, and more.
+Challenge: Develop a Design System of React Components using Storybook as documentation
 ```
 
 ###### Knowledges used and learned:
@@ -35,20 +35,13 @@ Functionalities implemented:
 
 #### How to run:
 
-Step zero, configure the `.env.local` file: 
-
-```env
-NEXT_URL=http://localhost:3000
-
-STRIPE_PUBLIC_KEY=your_stripe_public_key
-STRIPE_SECRET_KEY=your_stripe_secret_key
-```
-
 First, install and run the development server:
 
 ```bash
+# root file:
 npm install
 
+# root file:
 npm run dev
 ```
 
